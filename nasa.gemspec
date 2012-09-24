@@ -14,4 +14,6 @@ Gem::Specification.new do |gem|
   gem.name          = "nasa"
   gem.require_paths = ["lib"]
   gem.version       = Nasa::VERSION
+
+  gem.add_dependency "mechanize"
 end
