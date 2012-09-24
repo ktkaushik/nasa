@@ -80,6 +80,18 @@ module Nasa
     JSON.parse( Mechanize.new.get( nasa_api_url ).body )
   end
 
+  # returns a list of active categories along with
+  # its slug, no of posts and title
+  def self.get_active_categories
+    JSON.parse( Mechanize.new.get( self.url + "get_category_index/").body )
+  end
+
+  # returns a list of active tags along with
+  # its slug, no of posts and title
+  def self.get_active_tags
+    JSON.parse( Mechanize.new.get( self.url + "get_tag_index/").body )
+  end
+
   def self.url
     "http://data.nasa.gov/api/"
   end
