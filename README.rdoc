@@ -16,6 +16,78 @@ Or install it yourself as:
 
  $ gem install nasa
 
+== Usage
+
+You can go to Nasa's page with the {latest feeds}[http://data.nasa.gov] to view them.
+
+=== Recent feeds
+
+To get these recent feeds :-
+
+ Nasa.get_latest_data
+
+Pass in the number of feeds. If not then the method would fetch 10 by default.
+
+=== Fetch a feed
+
+Every feed has an *id* and if you know the id you are looking for, then :-
+
+ Nasa.search_by_id( id_you_wish_for )
+
+<em>There is no count here !</em>
+
+But, if you don't know the id, then you can just search by its title name in hyphen and lowercased format at the same time.
+
+For ex: 
+
+ title = "Mars Map Catalog"
+ slug  = title.downcase.split.join('-')
+
+Now you know what *slug* is. Awesome, send in the slug to this method and it will fetch you the dataset you were looking for.
+
+ Nasa.search_by_slug(your_slug)
+
+=== Feeds belonging to a category
+
+To fetch data belonging to a category to which an id is attached and you happen to know the id then pass the id to fetch that data :-
+
+ Nasa.get_category_data_by_id(id)
+
+
+To fetch the feeds belonging to a particular category, heres what you should do create a slug of that category name :-
+
+ Nasa.get_category_data_by_slug(your_slug)
+
+
+<em>In both the cases above, pass in the number of feeds. If not then the method would fetch 10 by default.</em>
+
+=== Feeds belonging to a tag
+
+To fetch feeds with a particular tag and if you know the id of the tag, then :-
+
+ Nasa.get_tag_data_by_id(tag_id)
+
+If you wish to fetch the feeds attached with a tag, then you can fetch those feeds by creating a slug of the tag name :-
+
+ Nasa.get_tag_data_by_slug(your_slug)
+
+<em>In both the cases above, pass in the number of feeds. If not then the method would fetch 10 by default.</em>
+
+=== Active Categories
+
+To get the active categories(not the feeds, just the categories) then :-
+
+ Nasa.get_active_categories
+
+=== Active Tags
+
+ Nasa.get_active_tags
+
+
+That's it. Its not a lot. Yet.
+
+
+All the data you get would be in JSON format.
 == Contributing
 
  1. Fork it
@@ -23,3 +95,5 @@ Or install it yourself as:
  3. Commit your changes (`git commit -am 'Added some feature'`)
  4. Push to the branch (`git push origin my-new-feature`)
  5. Create new Pull Request
+
+<b>Thank you !</b>
