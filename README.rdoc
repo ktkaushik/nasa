@@ -1,6 +1,6 @@
 = Nasa
 
-Nasa api for Ruby developers
+Nasa api for Ruby developers. This is not an offical project by Nasa
 
 == Installation
 
@@ -23,6 +23,3 @@ Or install it yourself as:
  3. Commit your changes (`git commit -am 'Added some feature'`)
  4. Push to the branch (`git push origin my-new-feature`)
  5. Create new Pull Request
-
-
-BTW, this is not an offical project by Nasa.
