@@ -21,9 +21,36 @@ module Nasa
   # slug = title name in hyphen and downcase format.
   #
   # Ex: if title = "Mars Map Catalog"
-  #     slug = title.downcase.split.join('_') => "mars-map-catalog"
+  #     slug = title.downcase.split.join('-') => "mars-map-catalog"
   def self.search_by_slug(slug)
     JSON.parse( Mechanize.new.get( self.url + "/get_dataset?slug=#{slug}").body )
+  end
+
+  # if you know the id for a particular category, then awesome.
+  # get all the data for a category via its id.
+  # Pass in count too
+  def self.get_category_data_by_id(id, count=nil)
+    nasa_api_url = self.url + "get_category_datasets/?id=#{id}"
+    if count
+      nasa_api_url = nasa_api_url + "&count=#{count}"
+    end
+    JSON.parse( Mechanize.new.get( nasa_api_url ).body )
+  end
+
+  # whereas if you dont know the id and you know the exact title the use this method.
+  # Search for category data via title. Pass in the slug
+  # What is slug ?
+  # slug = category title name in hyphen and downcase format.
+  #
+  # Ex: category_title = "Earth Science"
+  #     slug = category_title.downcase.split.join('-') => "earth-science"
+  # Pass in count too !
+  def self.get_category_data_by_slug(slug, count=nil)
+    nasa_api_url = self.url + "get_category_datasets/?slug=#{slug}"
+    if count
+      nasa_api_url = nasa_api_url + "&count=#{count}"
+    end
+    JSON.parse( Mechanize.new.get( nasa_api_url ).body )
   end
 
   def self.url
