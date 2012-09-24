@@ -10,12 +10,20 @@ module Nasa
     JSON.parse( Mechanize.new.get( self.url + "/get_recent_datasets?count=#{count}").body )
   end
 
-  def self.search_data_by_id(id)
-    JSON.parse( Mechanize.new.get( self.url + "/get_dataset?id=#{id.to_i}").body )
+  # if you know the id for a particular feed, then awesome. Get it via id.
+  def self.search_by_id(id)
+    JSON.parse( Mechanize.new.get( self.url + "/get_dataset?id=#{id}").body )
   end
 
-  def self.search_data_by_slug(slug)
-    JSON.parse( Mechanize.new.get( self.url + "/get_dataset?slug=#{slug.to_s}").body )
+  # whereas if you dont know the id and you do know the exact title then use this method.
+  # Search for your data by title. Just pass in the slug.
+  # What is slug ?
+  # slug = title name in hyphen and downcase format.
+  #
+  # Ex: if title = "Mars Map Catalog"
+  #     slug = title.downcase.split.join('_') => "mars-map-catalog"
+  def self.search_by_slug(slug)
+    JSON.parse( Mechanize.new.get( self.url + "/get_dataset?slug=#{slug}").body )
   end
 
   def self.url
