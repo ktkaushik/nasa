@@ -43,7 +43,7 @@ But, if you don't know the id, then you can just search by its title name in hyp
  title = "Mars Map Catalog"
  slug  = title.downcase.split.join('-')  =>  "mars-map-catalog"
 
-Now you know what *slug* is. Awesome, send in the (slug)[https://github.com/ktkaushik/nasa#ex-to-create-a-slug-] to this method and it will fetch you the dataset you were looking for.
+Now you know what *slug* is. Awesome, send in the slug[https://github.com/ktkaushik/nasa#ex-to-create-a-slug-] to this method and it will fetch you the dataset you were looking for.
 
  Nasa.search_by_slug(your_slug)
 
@@ -54,7 +54,7 @@ To fetch data belonging to a category to which an id is attached and you happen 
  Nasa.get_category_data_by_id(id)
 
 
-To fetch the feeds belonging to a particular category, heres what you should do create a (slug)[https://github.com/ktkaushik/nasa#ex-to-create-a-slug-] of that category name :-
+To fetch the feeds belonging to a particular category, heres what you should do, create a slug[https://github.com/ktkaushik/nasa#ex-to-create-a-slug-] of that category name :-
 
  Nasa.get_category_data_by_slug(your_slug)
 
@@ -67,7 +67,7 @@ To fetch feeds with a particular tag and if you know the id of the tag, then :-
 
  Nasa.get_tag_data_by_id(tag_id)
 
-If you wish to fetch the feeds attached with a tag, then you can fetch those feeds by creating a (slug)[https://github.com/ktkaushik/nasa#ex-to-create-a-slug-] of the tag name :-
+If you wish to fetch the feeds attached with a tag, then you can fetch those feeds by creating a slug[https://github.com/ktkaushik/nasa#ex-to-create-a-slug-] of the tag name :-
 
  Nasa.get_tag_data_by_slug(your_slug)
 
@@ -80,6 +80,7 @@ To get the active categories(not the feeds, just the categories) then :-
  Nasa.get_active_categories
 
 === Active Tags
+To get the active tags(not the feeds, just the tags) then :-
 
  Nasa.get_active_tags
 
