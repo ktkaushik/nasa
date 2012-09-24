@@ -26,7 +26,7 @@ To get these recent feeds :-
 
  Nasa.get_latest_data
 
-Pass in the number of feeds. If not then the method would fetch 10 by default.
+<em>Pass in the number of feeds. If not then the method would fetch 10 by default.</em>
 
 === Fetch a feed
 
@@ -38,10 +38,10 @@ Every feed has an *id* and if you know the id you are looking for, then :-
 
 But, if you don't know the id, then you can just search by its title name in hyphen and lowercased format at the same time.
 
-For ex: 
+=== Ex to create a slug: 
 
  title = "Mars Map Catalog"
- slug  = title.downcase.split.join('-')
+ slug  = title.downcase.split.join('-')  =>  "mars-map-catalog"
 
 Now you know what *slug* is. Awesome, send in the slug to this method and it will fetch you the dataset you were looking for.
 
