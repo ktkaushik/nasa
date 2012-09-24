@@ -6,7 +6,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["thirthappa.kaushik@gmail.com"]
   gem.description   = %q{Nasa api for ruby developers}
   gem.summary       = %q{Nasa has an api and here is how you can access it via ruby}
-  gem.homepage      = ""
+  gem.homepage      = "https://github.com/ktkaushik/nasa"
 
   gem.files         = `git ls-files`.split($\)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
